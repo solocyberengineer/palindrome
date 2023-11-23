@@ -9,9 +9,16 @@ NB: When creating a function, we refer to the variable between the parenthesis a
 When we call or invoke a function, we refer to it as an argument.
 */
 
-function isPalindrome(word){
-    dup_word = word.split('').reverse().join('')
-    return (dup_word == word)
+let wordInput = document.querySelector('#word');
+let output = document.querySelector('#output')
+
+function isPalindrome(){
+    dup_word = wordInput.value.split('').reverse().join('')
+    if(dup_word == wordInput.value) {
+        output.innerHTML = `'${dup_word}'<br> is a palindrome`
+    } else if( dup_word != wordInput.value ){
+        output.innerHTML = `'${dup_word}'<br> is not a palindrome`
+    }
 }
 
 // let result = isPalindrome('madam')
@@ -20,5 +27,9 @@ function isPalindrome(word){
 // let result = isPalindrome('radar')
 // let result = isPalindrome('level')
 // let result = isPalindrome('rotor')
-let result = isPalindrome('refer')
-console.log(result)
+// let result = isPalindrome('refer')
+// console.log(result)
+
+wordInput.oninput = isPalindrome;
+
+

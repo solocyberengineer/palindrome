@@ -19,6 +19,9 @@ function isPalindrome(){
     } else if( dup_word != wordInput.value ){
         output.innerHTML = `'${dup_word}'<br> is not a palindrome`
     }
+    if(wordInput.value == ''){
+        output.innerHTML = ''
+    }
 }
 
 // let result = isPalindrome('madam')
